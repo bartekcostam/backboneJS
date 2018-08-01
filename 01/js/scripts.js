@@ -9,7 +9,7 @@ var PersonView = Backbone.View.extend({
 
   template: _.template($("#personTemplate").html()),
 
-  render: function() {
+  render: function () {
     var html = this.template(this.model.toJSON());
 
     this.$el.append(html);
@@ -18,8 +18,21 @@ var PersonView = Backbone.View.extend({
   }
 });
 
-var people = new People([
-  {
+
+var PeopleView = Backbone.View.extend({
+  tagName: "ul",
+
+  render: function () {
+
+
+  }
+
+});
+
+
+
+
+var people = new People([{
     id: 1,
     name: "John",
     age: 33,
@@ -38,3 +51,8 @@ var people = new People([
     hobbies: ["swimming"]
   }
 ]);
+
+
+var peopleView = new PeopleView({
+  collection: people
+});
