@@ -23,8 +23,21 @@ var PeopleView = Backbone.View.extend({
   tagName: "ul",
 
   render: function () {
+    this.collection.each(this.addOne, this);
 
 
+
+  },
+
+  addOne: function (model) {
+
+    var view = new PersonView({
+      model: model
+    });
+
+    view.render();
+
+    this.$el.append(view.render().el);
   }
 
 });
