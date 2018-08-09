@@ -25,7 +25,7 @@ var PeopleView = Backbone.View.extend({
   render: function () {
     this.collection.each(this.addOne, this);
 
-
+    $("body").append(this.el);
 
   },
 
